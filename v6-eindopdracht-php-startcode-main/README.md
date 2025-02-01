@@ -11,7 +11,7 @@ Links to tutorial part 1, 2 and 3
 ## 1. Start the php server 
 Type the following command in Terminal
 ```
-php -S localhost:8080
+./start-server.sh
 ```
 A new browser tab automatically pops up. If it doesn't, click on ports, click the line with port 8080, click on the globe icon.
 
