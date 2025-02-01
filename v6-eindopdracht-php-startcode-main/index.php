@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['username'])) {
-    header("Location: inlog.html");
+    header("Location: /inlogscherm/inlog.html");
     exit();
 }
 ?>
