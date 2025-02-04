@@ -9,12 +9,12 @@ $dbname = "user_registration";
 // create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// chech connection
+// check connection
 if ($conn->connect_error){
     die("Connection failed:" . $conn->connect_error);
 }
 
-if ($_SETVER["REQUEST_METHOD"] == "POST"){
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $user = $_POST['username'];
     $email = $POST['email'];
     $pass = password_hash($_POST['password'], PASSWORD_DEFAULT);

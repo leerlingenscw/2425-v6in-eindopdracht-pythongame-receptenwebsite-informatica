@@ -7,14 +7,14 @@
         }
         ?>
         <form action= "register.php" method="post" id="registrationForm">
-            <h2>Inloggen</h2> 
+            <h2>Register</h2> 
             <div class="form-group">
                  <label for="username">Username:</label>
                  <input type="text" name="username" id="username"  required>
             </div>  
             <div class="form-group">
                  <label for="email">Email:</label>
-                 <input type="email" id="email" name= "email" required.
+                 <input type="email" id="email" name= "email" required>
             </div>
             <div class="form-group">
                  <label for="password">Password:</label>
