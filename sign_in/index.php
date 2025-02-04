@@ -25,6 +25,6 @@
             </div>
         </form>
     </div>
-    <script src="scripts.js"></script>
+    <script src="\sign_in\scripts.js"></script>
 </body>    
 </html>
