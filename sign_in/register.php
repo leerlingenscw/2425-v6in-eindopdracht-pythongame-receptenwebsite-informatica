@@ -4,14 +4,27 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "user_registration";
+$dbname = "registrationdb";
 
 // create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $registrationdb);
 
 // check connection
 if ($conn->connect_error){
     die("Connection failed:" . $conn->connect_error);
+} else { 
+    $stmt = $conn->prepare("select * from users where email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt_>execute();
+    $stmt_result = $stmt->get_result();
+    if($stmt_result->num_rows > 0){
+        $data = $stmt_result->fetch_assoc();
+        if($data['password'] === $password) {
+            echo "<h2>Login succesfully</h2>";
+        }
+   } else {
+    echo"<h2>Invalid Email or password</h2>";
+   }
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST"){
