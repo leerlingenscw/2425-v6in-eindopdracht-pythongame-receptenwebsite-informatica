@@ -4,17 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inloggen</title>
+    <title>Registreren</title>
     <link href="inlog.css" rel="stylesheet" />
 </head>
 
 <body>
     <div class="container">
-        <form action="login.php" method="post" id="loginForm">
-            <h2>Inloggen</h2>
+        <form action="register.php" method="post" id="registerForm">
+            <h2>Registreren</h2>          
             <div class="form-group">
-              <label for="username">Gebruikersnaam:</label>
-              <input type="text" id="username" name="username" required>
+                <label for="username">Gebruikersnaam:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
@@ -24,14 +25,13 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <div class="form-group">
-                <button type="submit">Inloggen</button>
+                <button type="submit">Registreren</button>
             </div>
-            <div class="register-link">
-                <p>Nog geen account? <a href="register.html">Registreer hier</a></p>
+            <div class="login-link">
+                <p>Heb je al een account? <a href="login.html">Inloggen</a></p>
             </div>
         </form>
     </div>
-    <script src="script.js"></script>
 </body>
 
 </html>

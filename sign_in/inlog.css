@@ -1,45 +1,95 @@
+
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100vh;
     margin: 0;
 }
 
+
 .container {
-    background: #e2c5c5;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin: 120px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 0 20px;
 }
 
 h2 {
     margin-bottom: 20px;
     text-align: center;
+    color: #333;
 }
 
+
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
+
 
 label {
     display: block;
     margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
 }
+
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     box-sizing: border-box;
+    font-size: 16px;
+    transition: border 0.3s ease;
 }
+
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
 
 button {
     width: 100%;
-    padding: 10px;
-    background: #007BFF;
+    padding: 12px;
+    background: hsl(336, 68%, 81%);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: hsl(336, 87%, 72%);
+}
+
+/* Link naar registratiepagina onderaan het formulier */
+.register-link, .login-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.register-link a, .login-link a {
+    color: hsl(336, 68%, 81%);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link a:hover, .login-link a:hover {
+    text-decoration: underline;
 }
