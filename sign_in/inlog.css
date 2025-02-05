@@ -78,7 +78,7 @@ button:hover {
     background: hsl(336, 87%, 72%);
 }
 
-/* Link naar registratiepagina onderaan het formulier */
+
 .register-link, .login-link {
     text-align: center;
     margin-top: 15px;
