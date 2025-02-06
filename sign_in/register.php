@@ -1,38 +1,36 @@
 <?php
-session_start();
+$db_path = '/workspaces/2425-v6in-eindopdracht-pythongame-receptenwebsite-informatica/inlogscherm.db';
+$db = new SQLite3($db_path);
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "registrationdb";  
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $password = $_POST['password'] ?? '';
 
+    if (empty($username) || empty($email) || empty($password)) {
+        die("❌ Vul alle velden in.");
+    }
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
+    $stmt = $db->prepare("SELECT COUNT(*) as count FROM users WHERE email = :email");
+    $stmt->bindValue(':email', $email, SQLITE3_TEXT);
+    $result = $stmt->execute();
+    $row = $result->fetchArray(SQLITE3_ASSOC);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+    if ($row['count'] > 0) {
+        die("❌ Dit e-mailadres is al geregistreerd. Kies een ander e-mailadres.");
+    }
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
-    
-    $user = $_POST['username'];
-    $email = $_POST['email'];
-    $pass = password_hash($_POST['password'], PASSWORD_DEFAULT); 
-
-    
-    $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $user, $email, $pass);
+    $stmt = $db->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
+    $stmt->bindValue(':username', $username, SQLITE3_TEXT);
+    $stmt->bindValue(':email', $email, SQLITE3_TEXT);
+    $stmt->bindValue(':password', $hashedPassword, SQLITE3_TEXT);
 
     if ($stmt->execute()) {
-        $_SESSION['success'] = "Registration successful!";
-        header("Location: login.html"); 
-        exit();
+        header("Location: /sign_in/inlog.html");
     } else {
-        echo "Error: " . $stmt->error;
+        echo "❌ Fout bij invoegen: " . $db->lastErrorMsg();
     }
 }
-
-$conn->close();
 ?>
