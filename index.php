@@ -1,4 +1,6 @@
-
+<?php header("Location: /sign_in/inlog.html");
+exit();
+?>
 
 
 
