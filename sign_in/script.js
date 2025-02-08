@@ -5,6 +5,7 @@ document.getElementById('registrationForm').addEventListener('submit', function 
     
     if (username === '' || email === '' || password === '') {
         alert('All fields are required');
-        event.preventDefault();
+        event.preventDefault(); 
     }
 });
+
