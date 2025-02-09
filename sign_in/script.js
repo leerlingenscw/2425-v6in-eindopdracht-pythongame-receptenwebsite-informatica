@@ -1,8 +1,8 @@
 
 document.getElementById('loginForm').addEventListener('submit', function (event) {
-    var username = document.getElementById('username').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
     
     if (username === '' || email === '' || password === '') {
         alert('Alle velden zijn verplicht');
@@ -13,9 +13,9 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
 
 
 document.getElementById('registerForm').addEventListener('submit', function (event) {
-    var username = document.getElementById('username').value;
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
     
     if (username === '' || email === '' || password === '') {
         alert('Alle velden zijn verplicht');
