@@ -1,47 +1,30 @@
 <?php
 session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "registrationdb";  // 
+$db_path = '/workspaces/2425-v6in-eindopdracht-pythongame-receptenwebsite-informatica/inlogscherm.db';
+$db = new SQLite3($db_path);
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST['email'] ?? '';
+    $password = $_POST['password'] ?? '';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+    if (empty($email) || empty($password)) {
+        echo "❌ Vul alle velden in.";
+        exit();
+    }
 
+    $stmt = $db->prepare("SELECT id, username, password FROM users WHERE email = :email");
+    $stmt->bindValue(':email', $email, SQLITE3_TEXT);
+    $result = $stmt->execute();
+    $user = $result->fetchArray(SQLITE3_ASSOC);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
-    
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    
-    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $stmt_result = $stmt->get_result();
-
-    if ($stmt_result->num_rows > 0) {
-        $data = $stmt_result->fetch_assoc();
-        
-        if (password_verify($password, $data['password'])) {
-            $_SESSION['user'] = $data['username'];
-            echo "<h2>Login successful!</h2>";
-            
-            header("Location: home.php"); 
-            exit();
-        } else {
-            echo "<h2>Invalid Email or Password</h2>";
-        }
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        header("Location: /header.php");
+        exit();
     } else {
-        echo "<h2>No user found with this email</h2>";
+        echo "❌ Ongeldige inloggegevens. Probeer opnieuw.";
     }
 }
-
-$conn->close();
 ?>

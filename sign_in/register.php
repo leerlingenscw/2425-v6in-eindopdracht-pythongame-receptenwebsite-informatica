@@ -7,10 +7,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';
 
-    if (empty($username) || empty($email) || empty($password)) {
-        die("❌ Vul alle velden in.");
-    }
-
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
     $stmt = $db->prepare("SELECT COUNT(*) as count FROM users WHERE email = :email");
@@ -29,8 +25,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         header("Location: /sign_in/inlog.html");
-    } else {
-        echo "❌ Fout bij invoegen: " . $db->lastErrorMsg();
     }
 }
 ?>
