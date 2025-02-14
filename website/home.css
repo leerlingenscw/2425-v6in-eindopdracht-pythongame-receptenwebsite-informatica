@@ -100,8 +100,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 70px 20px 20px 20px;
-    gap: 20px;
+   
 }
 
 .home-content {
@@ -109,6 +108,7 @@ header {
     max-width: 50%;
     text-align: left;
     padding: 20px;
+    margin-top:0px;
 }
 
 .home-image {
@@ -116,6 +116,8 @@ header {
     display: flex;
     justify-content: flex-start;
     margin-top: 20px;
+    padding: 70px 20px 20px 20px;
+    gap: 10px;
      
 }
 
