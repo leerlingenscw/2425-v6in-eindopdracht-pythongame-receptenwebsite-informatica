@@ -1,0 +1,23 @@
+p {
+    padding: 1%;
+ }
+ 
+ h2 {
+ font-family: Copperplate;
+ font-size: 32px;
+ padding: 2%;
+ text-align: center;
+ }
+ 
+ img {
+ width:100%;
+ }
+ 
+ h4 {
+ background: #F3EfE0;
+ font-weight: normal;
+ margin: 18px 0 18px 0;
+ padding: 1%;
+ text-align: center;
+ }
+ 
