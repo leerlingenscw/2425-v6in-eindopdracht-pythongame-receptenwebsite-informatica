@@ -7,6 +7,8 @@ header {
     padding: 0.5px;
     text-align: center;
     width: 100%;  
+    
+    
   }
   
   .wrapper {
@@ -19,12 +21,13 @@ header {
     color: black;
     font-family: calibri;
     font-size: 14.5pt;
+  
   }
   
   footer {
     background: #F6D1C1;
     color: #000000;
-    height: 25px;
+    height: 50px;
     margin-top:18px;
     overflow:hidden;
     padding: 1%;
@@ -37,6 +40,8 @@ header {
     overflow: hidden;
     padding: 0;
     width: 100%;
+    
+    
   }
   
   .navbar li {
