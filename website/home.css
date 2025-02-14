@@ -125,4 +125,9 @@ header {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    transition: transform 2s ease;
+}
+
+.rotate {
+    transform: rotate(360deg); 
 }
