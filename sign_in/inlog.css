@@ -14,7 +14,7 @@ body {
   background: #fff;
   padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 5px 15px hsl(336, 40%, 57%);
+  box-shadow: 0 5px 15px #bd6589;
   width: 100%;
   max-width: 400px;
   margin: 0 20px;
@@ -57,7 +57,7 @@ input[type="password"] {
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="password"]:focus {
-  border-color: #007BFF;
+  border-color: #EAB8A1;
   outline: none;
 }
 
@@ -65,7 +65,7 @@ input[type="password"]:focus {
 button {
   width: 100%;
   padding: 12px;
-  background: hsl(336, 68%, 81%);
+  background: #EAB8A1;
   color: black;
   border: none;
   border-radius: 5px;
@@ -75,7 +75,7 @@ button {
 }
 
 button:hover {
-  background: hsl(336, 87%, 72%);
+  background: #F6D1C1;
 }
 
 
@@ -85,7 +85,7 @@ button:hover {
 }
 
 .register-link a, .login-link a {
-  color: hsl(336, 68%, 81%);
+  color: #EAB8A1;
   text-decoration: none;
   font-weight: bold;
 }

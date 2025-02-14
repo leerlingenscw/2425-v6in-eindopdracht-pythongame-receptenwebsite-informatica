@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$user || !password_verify($password, $user['password'])) {
             header("Location: /sign_in/inlog.html");
         } else {
-            header("Location: /header.php");
+            header("Location: /website/home.html");
             exit();
         }
     
