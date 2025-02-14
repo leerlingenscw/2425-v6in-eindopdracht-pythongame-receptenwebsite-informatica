@@ -1,14 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
-  
-    document.getElementById('loginForm').addEventListener('submit', function (event) {
-        const username = document.getElementById('username').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
+    const loginForm = document.getElementById('loginForm');
+    const errorMessage = document.getElementById('foutmelding');
 
-  
+    // Check of er een foutmelding in de URL zit
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('error')) {
+        errorMessage.style.display = 'block';
+    }
+
+    loginForm.addEventListener('submit', function (event) {
+        const username = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+
         if (username === '' || email === '' || password === '') {
             alert('Alle velden zijn verplicht');
-            event.preventDefault(); 
+            event.preventDefault();
         }
     });
 });
