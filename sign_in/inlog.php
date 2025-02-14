@@ -15,12 +15,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $stmt->execute();
     $user = $result->fetchArray(SQLITE3_ASSOC);
 
-        if (!$user || !password_verify($password, $user['password'])) {
-            header("Location: /sign_in/inlog.html");
-        } else {
-            header("Location: /website/home.html");
-            exit();
-        }
-    
+    if (!$user || !password_verify($password, $user['password'])) {
+        header("Location: inlog.html?error=1");
+        exit();
+    } else {
+        header("Location: /website/home.html");
+        exit();
+    }
 }
 ?>
