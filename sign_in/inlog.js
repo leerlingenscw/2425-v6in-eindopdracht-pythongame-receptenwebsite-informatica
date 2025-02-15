@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('loginForm');
     const errorMessage = document.getElementById('foutmelding');
 
-    // Check of er een foutmelding in de URL zit
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.has('error')) {
         errorMessage.style.display = 'block';
