@@ -131,6 +131,7 @@ header {
 .recept-block:hover {
     transform: scale(1.05); 
     cursor: pointer;
+    background:#D6B2A1
 }
 a {
     color: #EAB8A1; 
