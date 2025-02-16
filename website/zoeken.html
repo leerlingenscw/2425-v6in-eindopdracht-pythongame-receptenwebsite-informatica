@@ -27,13 +27,26 @@
         </div>
 
         <main>
-            
+            <h1>Zoek naar een recept</h1>
+
+   
+    <form id="searchForm" action="zoeken.php" method="GET"  >
+        <input type="text" id="searchInput" name="query" placeholder="Zoek een gerecht of ingrediënt..." >
+            <button type="submit">Zoeken</button>
+    </form>
+
+   
+    <ul id="recipeList">
+       
+    </ul>
+
+  
         </main>
 
         <footer> 
             © 2025| Gemaakt door Marenze Schouten, Irene Pool en Sanne Kneppers
         </footer>
     </div>
-	<script src="home.js"></script> 
+	<script src="zoeken.js"></script> 
 </body>
 </html>
