@@ -137,3 +137,6 @@ header {
 .rotate {
     transform: rotate(360deg); 
 }
+a {
+  color: #D6B2A1; 
+}
