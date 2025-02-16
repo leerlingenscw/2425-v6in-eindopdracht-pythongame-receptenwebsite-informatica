@@ -35,8 +35,38 @@ if ($result) {
         $ingredienten[] = $row['ingrediënt'] . ' - ' . $row['hoeveelheid'];
         $bereidingswijze = $row['bereidingswijze'];
     }
-
+    ?>
+    <!DOCTYPE html>
+    <html lang="nl">
     
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" initial-scale=1.0">
+        <title>Smulweb</title>
+        <link href="overzicht.css" rel="stylesheet" type="text/css">
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>Overzicht recepten</h1>
+            </header>
+    
+            <div class="navbar">
+                <nav>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="overzicht.html">Overzicht recepten</a></li>
+                        <li><a href="zoeken.html">Zoeken</a></li>
+                        <li><a href="uploaden.html">Recepten uploaden</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+</body>
+    <?php
+    echo '<link rel="stylesheet" type="text/css" href="home.css">';
+
     echo "<h1>" . htmlspecialchars($gerecht) . "</h1>";
 
     echo "<p><strong>Ingrediënten:</strong><br>" . implode('<br>', $ingredienten) . "</p>";
@@ -48,3 +78,4 @@ if ($result) {
     echo "<p>Recept niet gevonden.</p>";
 }
 ?>
+

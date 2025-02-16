@@ -137,15 +137,5 @@ a {
     color: #EAB8A1; 
 }
 
-@media (max-width: 768px) {
-    .recept-block {
-        width: 45%; 
-    }
-}
 
-@media (max-width: 480px) {
-    .recept-block {
-        width: 100%;
-    }
-}
 
