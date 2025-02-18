@@ -11,7 +11,10 @@
 <body>
     <div class="container">
         <form action="register.php" method="post" id="registerForm" novalidate > 
-            <h2>Registreren</h2>          
+            <h2>Registreren</h2>
+            <p id="emailFoutmelding" style="color: red;display: none;">Dit e-mailadres is al in gebruik, vul een andere in.</p>
+            <p id="usernameFoutmelding" style="color: red;display: none;"> Deze gebruikersnaam is al in gebruik, vul een andere in.</p>          
+            
             <div class="form-group">
                 <label for="username">Gebruikersnaam:</label>
                 <input type="text" id="username" name="username" required>

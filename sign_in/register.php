@@ -3,9 +3,9 @@ $db_path = '/workspaces/2425-v6in-eindopdracht-pythongame-receptenwebsite-inform
 $db = new SQLite3($db_path);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $password = $_POST['password'] ?? '';
+    $username = trim($_POST['username'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $password = trim($_POST['password'] ?? '');
 
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
@@ -15,7 +15,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row = $result->fetchArray(SQLITE3_ASSOC);
 
     if ($row['count'] > 0) {
-        die("❌ Dit e-mailadres is al geregistreerd. Kies een ander e-mailadres.");
+        header("Location: register.html?error=email");
+        exit();
+    }
+
+    $stmt = $db->prepare("SELECT COUNT(*) as count FROM users WHERE username = :username");
+    $stmt->bindValue(':username', $username, SQLITE3_TEXT);
+    $result = $stmt->execute();
+    $row = $result->fetchArray(SQLITE3_ASSOC);
+
+    if ($row['count'] > 0) {
+        header("Location: register.html?error=username");
+        exit();
     }
 
     $stmt = $db->prepare("INSERT INTO users (username, email, password) VALUES (:username, :email, :password)");
