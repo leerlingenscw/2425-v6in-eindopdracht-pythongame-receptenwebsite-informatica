@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: inlog.html?error=1");
         exit();
     } else {
-        header("Location: /header.php");
+        header("Location: /website/home.html");
         exit();
     }
 }
