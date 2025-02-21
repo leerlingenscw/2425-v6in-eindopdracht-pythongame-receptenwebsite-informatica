@@ -28,19 +28,23 @@
         </div>
 
         <main>
-            <h2>Nieuw Recept Toevoegen (werkt nog niet)</h2>
+            <h2>Nieuw Recept Toevoegen</h2>
            
 
+
 <form action="uploaden.php" method="post">
+    <div class="form-group">
     <label for="gerecht">Naam van het gerecht:</label>
     <input type="text" id="gerecht" name="gerecht" required><br>
-
+</div>
+<div class="form-group">
     <label for="ingredienten">Ingrediënten (1 per regel, 'ingrediënt - hoeveelheid'):</label>
     <textarea id="ingredienten" name="ingredienten" rows="5" required></textarea><br>
-
+</div>
+<div class="form-group">
     <label for="bereidingswijze">Bereidingswijze:</label>
     <textarea id="bereidingswijze" name="bereidingswijze" rows="5" required></textarea><br>
-
+</div>
     <input type="submit" value="Recept toevoegen">
 </form>
 

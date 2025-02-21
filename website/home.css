@@ -141,3 +141,13 @@ a {
   color: #D6B2A1; 
 }
 
+.form-group {
+  margin-bottom: 20px;
+}
+
+textarea {
+  height: 15px; 
+  width: 200px; 
+  resize: none;
+}
+
