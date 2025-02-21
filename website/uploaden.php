@@ -17,20 +17,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $db->exec('BEGIN;');
 
     try {
-        // Voeg gerecht toe
+  
         $stmt = $db->prepare("INSERT INTO naam (gerecht) VALUES (:gerecht)");
         $stmt->bindValue(':gerecht', $gerecht, SQLITE3_TEXT);
         if (!$stmt->execute()) {
             throw new Exception("Fout bij toevoegen gerecht: " . $db->lastErrorMsg());
         }
 
-        // Haal het laatst toegevoegde gerecht_id op
+ 
         $gerecht_id = $db->lastInsertRowID();
         if (!$gerecht_id) {
             throw new Exception("Fout: gerecht_id niet gegenereerd!");
         }
 
-        // Voeg bereidingswijze toe
+
         $stmt = $db->prepare("INSERT INTO recept (gerecht_id, instructies) VALUES (:gerecht_id, :instructies)");
         $stmt->bindValue(':gerecht_id', $gerecht_id, SQLITE3_INTEGER);
         $stmt->bindValue(':instructies', $bereidingswijze, SQLITE3_TEXT);
@@ -38,7 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             throw new Exception("Fout bij toevoegen instructies: " . $db->lastErrorMsg());
         }
 
-        // Voeg ingrediënten toe
+     
         $stmt = $db->prepare("INSERT INTO ingrediënten (gerecht_id, ingrediënt, hoeveelheid) VALUES (:gerecht_id, :ingredient, :hoeveelheid)");
         foreach ($ingredienten as $item) {
             $parts = explode(' - ', trim($item));
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
 
-        // Bevestig de database-transactie
+     
         $db->exec('COMMIT;');
 
     
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
 
     } catch (Exception $e) {
-        // Herstel de database bij fouten
+        
         $db->exec('ROLLBACK;');
         die("❌ Fout bij toevoegen recept: " . $e->getMessage());
     }
