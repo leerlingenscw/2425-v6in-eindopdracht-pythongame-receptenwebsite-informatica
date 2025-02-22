@@ -16,10 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $result->fetchArray(SQLITE3_ASSOC);
 
     if (!$user || !password_verify($password, $user['password'])) {
-        header("Location: inlog.html?error=1");
+        header("Location: inlog.html?error=Login mislukt");
         exit();
     } else {
-        header("Location: /header.php");
+        $_SESSION['ingelogd'] = true;
+        header("Location: /website/home.php");
         exit();
     }
 }

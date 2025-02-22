@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['ingelogd']) || $_SESSION['ingelogd'] !== true) {
+    header("Location: /sign_in/inlog.html");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 
@@ -17,11 +25,12 @@
         <div class="navbar">
             <nav>
                 <ul>
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="home.php">Home</a></li>
                     <li><a href="overzicht.html">Overzicht recepten</a></li>
                     <li><a href="zoeken.html">Zoeken</a></li>
                     <li><a href="uploaden.html">Recepten uploaden</a></li>
                     <li><a href="wedstrijd.html">Wedstrijd</a></li>
+                    <li><a href="/sign_in/uitlog.php">Uitloggen</a></li>
                 </ul>
             </nav>
         </div>

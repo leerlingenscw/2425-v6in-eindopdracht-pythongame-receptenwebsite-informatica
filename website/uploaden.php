@@ -1,7 +1,9 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
+session_start();
+if (!isset($_SESSION['ingelogd']) || $_SESSION['ingelogd'] !== true) {
+    header("Location: /sign_in/inlog.html");
+    exit();
+}
 
 $db_path =  '/workspaces/2425-v6in-eindopdracht-pythongame-receptenwebsite-informatica/recepten.db';
 $db = new SQLite3($db_path);
