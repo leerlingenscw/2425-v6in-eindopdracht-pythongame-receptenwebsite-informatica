@@ -37,6 +37,7 @@ header {
   .navbar ul {
     background-color: #F6D1C1;
     list-style-type: none;
+    display: flex;
     margin: 0;
     overflow: hidden;
     padding: 0;
@@ -113,6 +114,7 @@ header {
     flex: 1;
     max-width: 100%;
     text-align: center;
-    padding: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
     margin-top:0px;
 }
