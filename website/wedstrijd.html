@@ -27,12 +27,13 @@
             </nav>
         </div>
         <section class="wedstrijd">
-        <form action="">
-            <h2>Recepten wedstrijd</h2>
-            <div class ="input-box">
-                <input type="text" placeholder = "Recept"
-                required>
-            </div>
+            <form action="wedstrijd.php" method="post" id="registerForm" novalidate > 
+                <h2>Recepten wedstrijd</h2>        
+                
+                <div class="form-group">
+                    <label for="gerecht">Recept:</label>
+                    <input type="text" id="gerecht" name="gerecht" required>
+                </div>
 
             <div class ="wedstrijdregelementen">
                 <label><input type="checkbox"> Ik ga akkoord met de <a href = "wedstrijdregelementen.html">wedstrijdregelementen</a></label>
@@ -44,6 +45,7 @@
 
         </form>
         </section>
+
 
         <main>
             <section class="uploaden">

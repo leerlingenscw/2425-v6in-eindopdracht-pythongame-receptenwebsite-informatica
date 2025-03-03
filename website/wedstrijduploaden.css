@@ -103,91 +103,23 @@ header {
     padding-top: 60px;
   }
 
-  .uploaden {
+  .wedstrijduploaden {
     display: flex;
     align-items: center;
     justify-content: space-between;
    
 }
 
-.uploaden-content {
+.wedstrijduploaden-content {
     flex: 1;
     max-width: 100%;
     text-align: center;
-    padding: 10px;
+    padding-left: 20%;
+    padding-right: 20%;
     margin-top:0px;
 }
 
-.wedstrijd {
-    flex: 1;
-    max-width: 100%;
-    text-align: center;
-    padding: 10;
-    margin-top:0px; 
+.wedstrijduploaden-text{
+    font-size: 45px;
 }
 
-
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color:#000000;
-  }
-  
-  
-  input[type="text"] {
-    width: 50%;
-    padding: 12px;
-    margin: 5px 0 15px 0;
-    border: 2px solid ;
-    border-radius: 5px;
-    border-color:#EAB8A1;
-    box-sizing: border-box;
-    font-size: 16px;
-    transition: border 0.3s ease;
-  }
-  
-  
-  input[type="text"]:focus {
-    border-color: #EAB8A1;
-    outline: none;
-  }
-}
-.wedstrijdregelementen{
-    width: 100%;
-    height: 35px;
-    font-size: 20px;
-    text-align: center;
-}
-.wedstrijdregelementen a {
-    color:#000000;
-    text-decoration: none;
-}
-
-.wedstrijdregelementen a:hover {
-    text-decoration: underline;
-    color: #e38568;
-}
-
-
-.btn{
-    width: 30%;
-    height: 45px;
-    background-color: #EAB8A1;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    font-size: 20px;
-    color: white;
-}
-
-
-
-.rotate {
-    transform: rotate(360deg); 
-}
