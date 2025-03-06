@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     function fetchResults(query) {
-        fetch('zoeken.php?query=' + encodeURIComponent(query))
+        fetch('zoeken2.php?query=' + encodeURIComponent(query))
             .then(response => response.text())
             .then(data => {
               

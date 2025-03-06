@@ -1,5 +1,5 @@
 window.onload = function() {
-    fetch('overzicht.php')  
+    fetch('overzicht2.php')  
         .then(response => response.text())  
         .then(data => {
             document.getElementById('recepten-container').innerHTML = data;

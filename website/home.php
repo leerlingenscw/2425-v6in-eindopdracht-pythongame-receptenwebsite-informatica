@@ -26,10 +26,10 @@ if (!isset($_SESSION['ingelogd']) || $_SESSION['ingelogd'] !== true) {
             <nav>
                 <ul>
                     <li><a href="home.php">Home</a></li>
-                    <li><a href="overzicht.html">Overzicht recepten</a></li>
-                    <li><a href="zoeken.html">Zoeken</a></li>
-                    <li><a href="uploaden.html">Recepten uploaden</a></li>
-                    <li><a href="wedstrijd.html">Wedstrijd</a></li>
+                    <li><a href="overzicht.php">Overzicht recepten</a></li>
+                    <li><a href="zoeken.php">Zoeken</a></li>
+                    <li><a href="uploaden.php">Recepten uploaden</a></li>
+                    <li><a href="wedstrijd.php">Wedstrijd</a></li>
                     <li><a href="/sign_in/uitlog.php">Uitloggen</a></li>
                 </ul>
             </nav>
