@@ -1,5 +1,5 @@
-<?php header("Location: /sign_in/inlog.html");
-exit();
+<?php /* header("Location: /sign_in/inlog.html");
+exit(); */
 ?>
 
 <?php 

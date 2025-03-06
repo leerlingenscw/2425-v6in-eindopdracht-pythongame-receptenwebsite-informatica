@@ -64,7 +64,7 @@ if ($result) {
                         <li><a href="overzicht.html">Overzicht recepten</a></li>
                         <li><a href="zoeken.html">Zoeken</a></li>
                         <li><a href="uploaden.html">Recepten uploaden</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="wedstrijd.html">Wedstrijd</a></li>
                         <li><a href="/sign_in/uitlog.php">Uitloggen</a></li>
                     </ul>
                 </nav>
